@@ -11,7 +11,7 @@ app.use(bodyParser());
 
 // connect to the databse... but which collection ?
 mongoose
-    .connect("mongodb://127.0.0.1:27017", {
+    .connect("mongodb://mongo:27017/todos", {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
@@ -58,4 +58,4 @@ router.post("/", ctx => {
 
 app.use(router.routes()).use(router.allowedMethods());
 
-app.listen(3000);
+app.listen(5000);
